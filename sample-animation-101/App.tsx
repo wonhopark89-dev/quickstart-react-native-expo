@@ -4,6 +4,7 @@ import { StyleSheet, View } from 'react-native';
 import LoadingIndicator from './src/LoadingIndicator';
 import WaveThingy from './src/PhoneRingIndicatorWave';
 import DiagonalOpenMenu from './src/DiagonalOpenMenu';
+import DynamicFlatList from './src/DynamicFlatList';
 
 export default function App() {
   return (
@@ -11,7 +12,8 @@ export default function App() {
       {/*<AnimatedStyleUpdateExample />*/}
       {/*<LoadingIndicator size={100} />*/}
       {/*<WaveThingy />*/}
-      <DiagonalOpenMenu />
+      {/*<DiagonalOpenMenu />*/}
+      <DynamicFlatList />
     </View>
   );
 }
