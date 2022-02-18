@@ -1,5 +1,5 @@
 import React from 'react';
-import { StatusBar, StyleSheet, FlatList, View, Text } from 'react-native';
+import { StatusBar, StyleSheet, FlatList, View, Text, SafeAreaView } from 'react-native';
 import chroma from 'chroma-js';
 import Animated, {
   useSharedValue,
@@ -39,11 +39,9 @@ interface ItemProps {
   itemHeight: Animated.SharedValue<number>;
 }
 
-const Item = ({ item, index, scrollY, itemY, itemHeight }: ItemProps) => {
+const Item = ({ item, index, scrollY, itemY, itemHeight }: any) => {
   console.log('from children y:', itemY);
   const stylez = useAnimatedStyle(() => {
-    // console.log(values.value)
-
     return {
       opacity: interpolate(scrollY.value, [itemY.value - 1, itemY.value, itemY.value + itemHeight.value], [1, 1, 0]),
       transform: [
@@ -103,26 +101,29 @@ const CustomCellRendererComponent = React.memo(({ children, ...props }) => {
   );
 });
 
-const DynamicFlatList = (props: any) => {
+const DynamicFlatList = () => {
+  // console.log(JSON.stringify(props));
   const scrollY = useSharedValue(0);
   const onScroll = useAnimatedScrollHandler(({ contentOffset: { y } }) => {
     scrollY.value = y;
   });
 
   return (
-    <View style={styles.container}>
-      <StatusBar hidden />
-      <AnimatedFlatList
-        data={_data}
-        keyExtractor={(item, index) => `_${index}`}
-        onScroll={onScroll}
-        scrollEventThrottle={16}
-        CellRendererComponent={CustomCellRendererComponent}
-        renderItem={({ item, index }) => {
-          return <Item item={item} index={index} scrollY={scrollY} {...props} />;
-        }}
-      />
-    </View>
+    <SafeAreaView style={{ flex: 1 }}>
+      <View style={styles.container}>
+        <StatusBar hidden />
+        <AnimatedFlatList
+          data={_data}
+          keyExtractor={(item, index) => `_${index}`}
+          onScroll={onScroll}
+          scrollEventThrottle={16}
+          CellRendererComponent={CustomCellRendererComponent}
+          renderItem={({ item, index }) => {
+            return <Item item={item} index={index} scrollY={scrollY} />;
+          }}
+        />
+      </View>
+    </SafeAreaView>
   );
 };
 
