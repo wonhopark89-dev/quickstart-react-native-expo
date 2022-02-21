@@ -5,6 +5,7 @@ import LoadingIndicator from './src/LoadingIndicator';
 import WaveThingy from './src/PhoneRingIndicatorWave';
 import DiagonalOpenMenu from './src/DiagonalOpenMenu';
 import DynamicFlatList from './src/DynamicFlatList';
+import VotedAnimation from './src/VotedAnimation';
 
 export default function App() {
   return (
@@ -13,7 +14,8 @@ export default function App() {
       {/*<LoadingIndicator size={100} />*/}
       {/*<WaveThingy />*/}
       {/*<DiagonalOpenMenu />*/}
-      <DynamicFlatList />
+      {/*<DynamicFlatList />*/}
+      <VotedAnimation />
     </View>
   );
 }
