@@ -6,6 +6,7 @@ import WaveThingy from './src/PhoneRingIndicatorWave';
 import DiagonalOpenMenu from './src/DiagonalOpenMenu';
 import DynamicFlatList from './src/DynamicFlatList';
 import VotedAnimation from './src/VotedAnimation';
+import ProcessingLoop from './src/ProcessingLoop';
 
 export default function App() {
   return (
@@ -15,7 +16,8 @@ export default function App() {
       {/*<WaveThingy />*/}
       {/*<DiagonalOpenMenu />*/}
       {/*<DynamicFlatList />*/}
-      <VotedAnimation />
+      {/*<VotedAnimation />*/}
+      <ProcessingLoop />
     </View>
   );
 }
