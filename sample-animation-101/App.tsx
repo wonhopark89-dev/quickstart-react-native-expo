@@ -7,6 +7,7 @@ import DiagonalOpenMenu from './src/DiagonalOpenMenu';
 import DynamicFlatList from './src/DynamicFlatList';
 import VotedAnimation from './src/VotedAnimation';
 import ProcessingLoop from './src/ProcessingLoop';
+import ShapeLike from './src/ShapeLike';
 
 export default function App() {
   return (
@@ -17,7 +18,8 @@ export default function App() {
       {/*<DiagonalOpenMenu />*/}
       {/*<DynamicFlatList />*/}
       {/*<VotedAnimation />*/}
-      <ProcessingLoop />
+      {/*<ProcessingLoop />*/}
+      <ShapeLike />
     </View>
   );
 }
