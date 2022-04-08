@@ -8,6 +8,7 @@ import DynamicFlatList from './src/DynamicFlatList';
 import VotedAnimation from './src/VotedAnimation';
 import ProcessingLoop from './src/ProcessingLoop';
 import ShapeLike from './src/ShapeLike';
+import ProcessIndicator, { INIT_PROPS } from './src/ProcessIndicator';
 
 export default function App() {
   return (
@@ -19,7 +20,8 @@ export default function App() {
       {/*<DynamicFlatList />*/}
       {/*<VotedAnimation />*/}
       {/*<ProcessingLoop />*/}
-      <ShapeLike />
+      {/*<ShapeLike />*/}
+      <ProcessIndicator {...INIT_PROPS} />
     </View>
   );
 }
